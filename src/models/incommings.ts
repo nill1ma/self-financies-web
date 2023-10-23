@@ -1,16 +1,14 @@
-export interface Expenses {
+export interface IncommingsDTO {
     [key:string]: string | number | Date | undefined
     id: string
-    destine:string
+    origin:string
     value:number
-    payed_value:number
     pay_day:Date
-    due_date:Date
     created_at:Date
     updated_at:Date
     user_id?:string
 }
 
-export type ExpensesDTO = Omit<Expenses, 'id' | 'created_at' | 'updated_at'> & {
+export type ExpensesDTO = Omit<IncommingsDTO, 'id' | 'created_at' | 'updated_at'> & {
     [key:string]: string | Date | number
 }

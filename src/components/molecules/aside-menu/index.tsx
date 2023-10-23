@@ -9,6 +9,6 @@ export default function AsideMenu() {
     ]
 
     return <>
-        {menu.map(({path, label}) => <MenuItem isSideBar key={path} path={path} label={label} />)}
+        {menu.map(({path, label}) => <MenuItem key={path} path={path} label={label} />)}
     </>
 };

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { Expenses } from "../../models/expenses"
+import { Expenses, ExpensesDTO } from "../../models/expenses"
 
 const BASE_URL = `http://localhost:3000`
 const get = async (): Promise<Expenses[]> => {
@@ -7,9 +7,9 @@ const get = async (): Promise<Expenses[]> => {
     return response.data
 }
 
-const create = async () => {
+const create = async (data: ExpensesDTO) => {
     try {
-        await axios.post(`${BASE_URL}/create-expenses`)   
+        await axios.post(`${BASE_URL}/create-expenses`, {...data, user_id: "54a46e0e-a80c-4656-a1c5-763cadce0e9f"}) 
     } catch (error) {
         throw new Error(`Error creating exepense!`)  
     }

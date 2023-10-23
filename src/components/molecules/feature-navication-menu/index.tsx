@@ -5,7 +5,7 @@ import { NavMenu } from "./style";
 export default function FeatureNavigationMenu({menu}:Props) {
 
     return <NavMenu>
-            {menu.map(m => <MenuItem label={m.label} path={m.path} />)}
+            {menu.map(m => <MenuItem key={m.path} label={m.label} path={m.path} />)}
         </NavMenu>
 };
 
